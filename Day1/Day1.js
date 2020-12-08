@@ -1,4 +1,4 @@
-var data = require('../input.json');
+var data = require('./input.json');
 
 getResult = (input) => {
   for (let i = 0; i < input.length; i++) {
