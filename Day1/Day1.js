@@ -1,4 +1,4 @@
-var data = require('./input.json');
+var data = require('./data.json');
 
 getResult = (input) => {
   for (let i = 0; i < input.length; i++) {
@@ -17,5 +17,5 @@ getResult = (input) => {
   }
 }
 
-getResult(data.input);
+getResult(data.data);
 
