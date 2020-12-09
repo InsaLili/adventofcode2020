@@ -1,4 +1,4 @@
-var data = require('./data.json');
+const data = require('./data.json');
 
 let action = '';
 let distance = 0;
@@ -35,7 +35,6 @@ const reset = () => {
 }
 
 const getResult = (data) => {
-
   for (let i = 0; i < data.length; i = index) {
     const item = data[i];
     parseInput(item);
