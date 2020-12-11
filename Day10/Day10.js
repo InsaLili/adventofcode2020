@@ -1,10 +1,8 @@
 const data = require('./data.json');
-const toNumbers = (stringArray) => stringArray.map(string => parseInt(string));
-const sortAsc = (sortArray) => sortArray.sort((a, b) => a - b);
-const input = sortAsc(toNumbers(data.data));
+const input = data.data.map(string => parseInt(string)).sort((a, b) => a - b);
 
 //Part 1
-const getAllJolt = (inputData) => {
+const part1 = (inputData) => {
   let diff1 = 0;
   let diff3 = 0;
 
@@ -15,28 +13,21 @@ const getAllJolt = (inputData) => {
   diff3++;
   console.log("part 1: ", diff1 * diff3);
 }
-// getAllJolt(input);
+// part1(input);
 
 
-//Part 2
-const memorize = [];
+//Part 2 dynamic programming
+const dp = [];
+input.forEach((x, i) => {
+  dp[i] = 0;
 
-const reduceJolt = (inputData, currentIndex) => {
-  if (typeof memorize[inputData] !== 'undefined') {
-    return memorize[inputData];
+  let j = i - 1;
+  while (j >= 0 && x - input[j] <= 3) {
+    dp[i] += dp[j];
+    j--;
   }
 
-  let currentResult = 0;
-  for (let i = 0; i < inputData.length - 1; i++) {
-    if (inputData[i + 2] - inputData[i] <= 3) {
-      currentResult++;
-      const newInput = inputData.slice(i + 2);
-      newInput.unshift(inputData[i]);
-      currentResult += reduceJolt(newInput, currentIndex + 1)
-    }
-  }
-  memorize[inputData] = currentResult;
-  return currentResult
-}
+  if (x <= 3) dp[i]++;
+});
 
-console.log("part 2: ", reduceJolt(input, 0));
+console.log(dp[input.length - 1]);
