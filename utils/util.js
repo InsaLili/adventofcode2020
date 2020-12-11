@@ -1,5 +1,7 @@
 export const toNumbers = (stringArray) => stringArray.map(string => parseInt(string));
 
+export const sortAsc = (sortArray) => sortArray.sort((a, b) => a - b);
+
 export const getMin = (input) => {
   let min = input[0];
   for (let i = 1; i < input.length; i++) {
