@@ -1,6 +1,6 @@
 import { getMax, getMin, toNumbers } from '../utils/util';
 
-const data = require('./data.json');
+const data = require('../data/day9.json');
 const preamble = 25;
 const inputData = toNumbers(data.data);
 

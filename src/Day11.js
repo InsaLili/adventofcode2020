@@ -1,6 +1,5 @@
-const data = require('./test.json');
-const parseInput = (data) => data.map(item => item.split(""));
-
+const data = require('./data')();
+const parseInput = () => data.map(item => item.split(""));
 const updateSeat = (d, row, col, c) => {
   let seat = d[row][col];
   if (seat === '.') return { seat, c };

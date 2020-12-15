@@ -1,4 +1,4 @@
-const data = require('./data.json');
+const data = require('../data/day8.json');
 
 let action = '';
 let distance = 0;

@@ -1,4 +1,4 @@
-const data = require('./data.json');
+const data = require('../data/day3.json');
 
 const countTree = (input, right, down) => {
   let result = 0;

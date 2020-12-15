@@ -1,4 +1,4 @@
-const data = require("./data.json");
+const data = require("../data/day2.json");
 
 let startRange = 0;
 let endRange = 0;

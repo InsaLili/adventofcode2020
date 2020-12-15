@@ -1,4 +1,4 @@
-const data = require('./data.json');
+const data = require('../data/day10.json');
 const input = data.data.map(string => parseInt(string)).sort((a, b) => a - b);
 
 //Part 1
